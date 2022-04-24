@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 model_type = "ExtendedSumm"
 n=5
-document_name = "Document_1"
+document_name = "Document_2"
 
 document_path = os.path.join("Document", document_name + ".xml")
 document = Document(document_path)
@@ -28,7 +28,7 @@ else:
 G = model.create_text_graph()
 #model.show_text_graph(G)
 C = model.get_candidate_edges(G)
-print(C)
+#print(C)
 S = model.get_candidate_summary(C)
 S_final = model.sentence_selection(G, S, n=n)
 summary = "\n".join(S_final)

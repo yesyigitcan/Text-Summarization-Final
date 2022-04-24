@@ -23,7 +23,10 @@ class SummModel(ABC):
             self.title_nouns += tmp_nouns
             self.title_nprops += tmp_nprops
 
-        self.keywords_nouns, self.keywords_nprops = self.get_noun_words(document.keywords)
+        if document.keywords:
+            self.keywords_nouns, self.keywords_nprops = self.get_noun_words(document.keywords)
+        else:
+            self.keywords_nouns, self.keywords_nprops = list(), list()
 
         self.sentence_nouns = list()
         self.sentence_nprops = list()
@@ -158,7 +161,7 @@ class SummModel(ABC):
                 if nodes[out_node] >= destination_node_weight:
                     pass_flag = 1
                     C.append((node, out_node))
-                print("Base node: {} | Out node: {} | Out node weight {} | Destination node weight {} | Pass flag {}".format(node, out_node, nodes[out_node], destination_node_weight, pass_flag))
+                #print("Base node: {} | Out node: {} | Out node weight {} | Destination node weight {} | Pass flag {}".format(node, out_node, nodes[out_node], destination_node_weight, pass_flag))
         return C
 
     @abstractmethod
@@ -191,7 +194,12 @@ class SummModel(ABC):
         if n >= len(orderedSentences):
             return S
         else:
-            return orderedSentences[:n]
+            selectedSentences = list()
+            for sentence in S:
+                if sentence in orderedSentences[:n]:
+                    selectedSentences.append(sentence)
+            return selectedSentences
+
 
                 
             

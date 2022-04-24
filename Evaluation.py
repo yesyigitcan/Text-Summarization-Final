@@ -6,7 +6,7 @@ import datetime
 #hypothesis_ext_path = "Latest Auto Summaries\Document_1_GeneratedExtended.txt"
 #hypothesis_edg_path = "Latest Auto Summaries\Document_1_GeneratedEdgeSumm.txt"
 
-summaryFileName = "Document_1"
+summaryFileName = "Document_2"
 
 folderName = os.path.join("Summary", "Auto Generated")
 for filename in os.listdir(folderName):
@@ -47,5 +47,5 @@ print(scores)
 rogue_summary += str(scores)
 
 outputfileName = "Evaluation.txt"
-with open(outputfileName, 'w') as outputfile:
+with open(os.path.join("Evaluation", summaryFileName + "_" + outputfileName), 'w') as outputfile:
     outputfile.write(rogue_summary)

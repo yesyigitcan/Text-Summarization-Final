@@ -6,7 +6,7 @@ class Document:
         self.all = list()
         self.titles = list()
         self.descriptions = list()
-        self.keywords = ""
+        self.keywords = None
         self.paragraphs = list()
         
         tree = ET.parse(documentPath)
