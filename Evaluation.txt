@@ -1,0 +1,7 @@
+EdgeSumm Rouge Scores
+Filename: Summary\Auto Generated\Document_1_EdgeSumm_5.txt
+[{'rouge-1': {'r': 1.0, 'p': 1.0, 'f': 0.999999995}, 'rouge-2': {'r': 0.9764705882352941, 'p': 0.9764705882352941, 'f': 0.9764705832352941}, 'rouge-l': {'r': 1.0, 'p': 1.0, 'f': 0.999999995}}]
+
+Extended Rouge Scores
+Filename: Summary\Auto Generated\Document_1_ExtendedSumm_5.txt
+[{'rouge-1': {'r': 1.0, 'p': 1.0, 'f': 0.999999995}, 'rouge-2': {'r': 0.9764705882352941, 'p': 0.9764705882352941, 'f': 0.9764705832352941}, 'rouge-l': {'r': 1.0, 'p': 1.0, 'f': 0.999999995}}]
