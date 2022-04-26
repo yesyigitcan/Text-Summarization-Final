@@ -68,6 +68,7 @@ class SummModel(ABC):
 
     @abstractmethod
     def calculate_word_weights(self):
+        print("outside")
         word_frequency = self.calculate_word_frequency(self.all_nouns)
         title_frequency = self.calculate_word_frequency(self.title_nouns)
         keyword_frequency = self.calculate_word_frequency(self.keywords_nouns)
@@ -177,8 +178,8 @@ class SummModel(ABC):
         return candidate_summary
 
     @abstractmethod
-    def sentence_selection(self, G:nx.Graph, S:list, n=None):
-        # Sentece bigram ranking used
+    def sentence_ranking(self, G:nx.Graph, S:list, n=None):
+         # Sentece bigram ranking used
         if not n:
             return S
         noun_weight = dict(G.nodes.data("weight"))
@@ -189,7 +190,13 @@ class SummModel(ABC):
             sentence_nodes_weight = [noun_weight[node] for node in sentence_nodes]
             bigram_weight = sum(sentence_nodes_weight) / max(sentence_nodes_weight)
             sentence_rank_dict.update({sentence:bigram_weight})
+        return sentence_rank_dict
+
+    @abstractmethod
+    def sentence_selection(self, G:nx.Graph, S:list, n=None):
+        sentence_rank_dict = self.sentence_ranking(G, S, n)
         orderedSentenceRankDict = OrderedDict(sorted(sentence_rank_dict.items(), key=lambda kv: kv[1], reverse=True))
+        #print(orderedSentenceRankDict)
         orderedSentences = list(orderedSentenceRankDict.keys())
         if n >= len(orderedSentences):
             return S

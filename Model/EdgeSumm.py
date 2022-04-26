@@ -2,6 +2,7 @@ import stanza
 from collections import Counter
 from Model.Document import Document
 from Model.Summ import SummModel
+import networkx as nx
 class EdgeSummModel(SummModel):
     def __init__(self, document:Document) -> None:
         super().__init__(document)
@@ -29,6 +30,9 @@ class EdgeSummModel(SummModel):
     
     def get_candidate_summary(self, C):
         return super().get_candidate_summary(C, edges_count_threshold=1)
+
+    def sentence_ranking(self, G:nx.Graph, S:list, n=None):
+        return super().sentence_ranking(G, S, n)
 
     def sentence_selection(self, G, S, n=None):
         return super().sentence_selection(G, S, n)

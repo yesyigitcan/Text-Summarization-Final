@@ -11,17 +11,20 @@ import os
 import matplotlib.pyplot as plt
 
 
-model_type = "ExtendedSumm"
-n=5
+model_type = "EdgeSumm"
+n=7
+corpusWeight = 1.2
+corpusPath = "Corpus"
 document_name = "Document_2"
 
 document_path = os.path.join("Document", document_name + ".xml")
-document = Document(document_path)
 
 if model_type == "EdgeSumm":
+    document = Document(document_path)
     model = EdgeSummModel(document)
 elif model_type == "ExtendedSumm":
-    model = ExtendedSummModel(document)
+    document = Document(document_path, corpusPath=corpusPath)
+    model = ExtendedSummModel(document, corpusWeight=corpusWeight)
 else:
     raise Exception("Invalid Model Type '{}'".format(model_type))
 
@@ -30,7 +33,10 @@ G = model.create_text_graph()
 C = model.get_candidate_edges(G)
 #print(C)
 S = model.get_candidate_summary(C)
-S_final = model.sentence_selection(G, S, n=n)
+if model_type == "ExtendedSumm":
+    S_final = model.sentence_selection(G, S, D=document, n=n)
+else:
+    S_final = model.sentence_selection(G, S, n=n)
 summary = "\n".join(S_final)
 with open(os.path.join("Summary", "Auto Generated", document_name + "_" + model_type + "_" + str(n) + ".txt"), "w", encoding="utf-8") as outputFile:
     outputFile.write(summary)

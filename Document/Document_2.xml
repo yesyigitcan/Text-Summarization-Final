@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document link="https://spor.haber7.com/super-lig/haber/3216513-cuneyt-cakir-alkislarla-geri-dondu">
+<document link="https://spor.haber7.com/super-lig/haber/3216513-cuneyt-cakir-alkislarla-geri-dondu" corpus="Football">
     <title>
         <sentence>
             Cüneyt Çakır alkışlarla geri döndü!
@@ -91,7 +91,10 @@
     </subtitle>
     <paragraph>
         <sentence>
-            Cüneyt Çakır bu davranış sonrası duygusal anlar yaşadı. Tecrübeli hakem tribünleri selamladı, bu sırada tribünlerde alkışlar devam etti.
+            Cüneyt Çakır bu davranış sonrası duygusal anlar yaşadı.
+        </sentence>
+        <sentence>
+            Tecrübeli hakem tribünleri selamladı, bu sırada tribünlerde alkışlar devam etti.
         </sentence>
         <sentence>
             Öte yandan iki takım futbolcuları ve teknik heyetler, Cüneyt Çakır'ın yanına gelerek hakeme sarıldı.

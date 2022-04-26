@@ -7,16 +7,28 @@ import datetime
 #hypothesis_edg_path = "Latest Auto Summaries\Document_1_GeneratedEdgeSumm.txt"
 
 summaryFileName = "Document_2"
+outputfileName = "Evaluation.txt"
+summaryN = 7
+summaryNStr = str(summaryN)
+
+output_path = os.path.join("Evaluation", "_".join([summaryFileName, summaryNStr, outputfileName]) )
 
 folderName = os.path.join("Summary", "Auto Generated")
-for filename in os.listdir(folderName):
-    if "ExtendedSumm" in filename and summaryFileName in filename:
-        hypothesis_ext_path = os.path.join(folderName, filename)
-    elif "EdgeSumm" in filename and summaryFileName in filename:        
-        hypothesis_edg_path = os.path.join(folderName, filename)
 
+hypothesis_ext_path = os.path.join(folderName, "_".join([summaryFileName, "ExtendedSumm", summaryNStr]))
+hypothesis_edg_path = os.path.join(folderName, "_".join([summaryFileName, "EdgeSumm", summaryNStr]))
+reference_path = os.path.join("Summary", "Human Generated", "_".join([summaryFileName, summaryNStr, "Human"]))
 
-reference_path = os.path.join("Summary", "Human Generated", summaryFileName + "_Human.txt")
+if os.path.exists(hypothesis_ext_path):
+    raise Exception("ExtendedSumm summary could not be found at {}".format(hypothesis_ext_path))
+if os.path.exists(hypothesis_edg_path):
+    raise Exception("EdgeSumm summary could not be found at {}".format(hypothesis_edg_path))
+if os.path.exists(reference_path):
+    raise Exception("Human summary could not be found at {}".format(reference_path))
+
+hypothesis_ext_path += ".txt"
+hypothesis_edg_path += ".txt"
+reference_path += ".txt"
 
 with open(hypothesis_ext_path, 'r', encoding='utf-8') as inputExtFile:
     hypothesis_ext = inputExtFile.read().replace('\n', ' ')
@@ -46,6 +58,6 @@ print("ExtendedSumm Rouge Scores")
 print(scores)
 rogue_summary += str(scores)
 
-outputfileName = "Evaluation.txt"
-with open(os.path.join("Evaluation", summaryFileName + "_" + outputfileName), 'w') as outputfile:
+
+with open(output_path, 'w') as outputfile:
     outputfile.write(rogue_summary)
