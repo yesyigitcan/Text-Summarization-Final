@@ -1,6 +1,4 @@
 from platform import node
-
-from sympy import N
 from Model.ExtendedSumm import ExtendedSummModel
 from Model.EdgeSumm import EdgeSummModel
 from Model.Document import Document
@@ -11,7 +9,7 @@ import os
 import matplotlib.pyplot as plt
 
 
-model_type = "EdgeSumm"
+model_type = "ExtendedSumm"
 n=7
 corpusWeight = 1.2
 corpusPath = "Corpus"

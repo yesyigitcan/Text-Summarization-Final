@@ -1,4 +1,3 @@
-from turtle import pos
 import xml.etree.ElementTree as ET
 import os
 
