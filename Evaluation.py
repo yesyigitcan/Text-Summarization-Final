@@ -6,7 +6,7 @@ import datetime
 #hypothesis_ext_path = "Latest Auto Summaries\Document_1_GeneratedExtended.txt"
 #hypothesis_edg_path = "Latest Auto Summaries\Document_1_GeneratedEdgeSumm.txt"
 
-summaryFileName = "Document_2"
+summaryFileName = "Document_4"
 outputfileName = "Evaluation.txt"
 summaryN = 7
 summaryNStr = str(summaryN)

@@ -1,5 +1,5 @@
-import stanza
 from collections import Counter, OrderedDict
+from statistics import mean, median_high
 from Model.Document import Document
 from Model.Summ import SummModel
 import networkx as nx

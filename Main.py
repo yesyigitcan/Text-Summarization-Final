@@ -1,4 +1,5 @@
 from platform import node
+import sys
 from Model.ExtendedSumm import ExtendedSummModel
 from Model.EdgeSumm import EdgeSummModel
 from Model.Document import Document
@@ -10,10 +11,10 @@ import matplotlib.pyplot as plt
 
 
 model_type = "ExtendedSumm"
-n=7
+n=12
 corpusWeight = 1.2
 corpusPath = "Corpus"
-document_name = "Document_2"
+document_name = "Document_4"
 
 document_path = os.path.join("Document", document_name + ".xml")
 
