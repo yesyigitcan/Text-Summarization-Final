@@ -1,7 +1,7 @@
 |Document|Sentence Count|Model|Rogue-1|Rogue-2|Rogue-L
 |--- | ---|---|---|---|---|
 |Document #3|8|EdgeSumm|0.69565|0.64444|0.69565|
-|Document #3|8|ExtendedSumm|0.70552|0.71226|0.74434|
+|Document #3|8|ExtendedSumm|0.74434|0.71226|0.74434|
 |Document #4|7|EdgeSumm|0.61135|0.50557|0.61135|
 |Document #4|7|ExtendedSumm|0.61135|0.50557|0.61135|
 |Document #4|8|EdgeSumm|0.56800|0.46465| 0.56800|
