@@ -37,6 +37,9 @@
   <li>
     ExtendedSumm performs better when sentence count of the document increases especially when the sentence count in the same paragraphs under the same subtitle increases.
   </li>
+  <li>
+    Rogue scores are higher on subjective articles than objective articles. This value might change as dependent on human summaries and other factors. But since objectives articles are more abstract and have less repeated technical words most of the time, these make summarization process harder for autonomous models.
+  </li>
 </ul>
 
 <h2>Future Work</h2>
@@ -65,3 +68,10 @@
 |Document #4|10|ExtendedSumm|0.64828|0.56977|0.64828|
 |Document #4|12|EdgeSumm|0.68085|0.54867|0.68085|
 |Document #4|12|ExtendedSumm|0.60436|0.51414|0.60436|
+|Document #5|10|EdgeSumm|0.55801|0.49321|0.55801|
+|Document #5|10|ExtendedSumm|0.57224|0.51905|0.57224|
+|Document #5|11|EdgeSumm|0.54497|0.42745|0.54497|
+|Document #5|11|ExtendedSumm|0.55228|0.48552|0.55228|
+|Document #5|12|EdgeSumm|0.56122|0.49057|0.56122|
+|Document #5|12|ExtendedSumm|0.57216|0.50107|0.57216|
+
