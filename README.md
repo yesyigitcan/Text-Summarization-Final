@@ -35,7 +35,7 @@
     ExtendedSumm performs better when document follows the path of description about the topic first and then details but visa-verse when document starts with a warm welcome like 'welcome to my new article' or 'my previous article got 5k likes and thank you all for this'.
   </li>
   <li>
-    ExtendedSumm performs better when sentence count of the document increases especially when the sentence count in the same paragraphs under the same subtitle increases.
+    ExtendedSumm performs better when sentence count of the document increases especially when the sentence count in the same paragraphs under the same subtitle increases. In this study, ExtendedSumm showed a poor performance on short sports articles. Because in those articles, each sentence has a possibility of having an important sentece and each sentence is highly informative. So this eliminates the importance of sentence positioning. 
   </li>
   <li>
     Rogue scores are higher on subjective articles than objective articles. This value might change as dependent on human summaries and other factors. But since objectives articles are more abstract and have less repeated technical words most of the time, these make summarization process harder for autonomous models.
