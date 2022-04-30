@@ -6,9 +6,9 @@ import datetime
 #hypothesis_ext_path = "Latest Auto Summaries\Document_1_GeneratedExtended.txt"
 #hypothesis_edg_path = "Latest Auto Summaries\Document_1_GeneratedEdgeSumm.txt"
 
-summaryFileName = "Document_4"
+summaryFileName = "Document_5"
 outputfileName = "Evaluation.txt"
-summaryN = 7
+summaryN = 12
 summaryNStr = str(summaryN)
 
 output_path = os.path.join("Evaluation", "_".join([summaryFileName, summaryNStr, outputfileName]) )

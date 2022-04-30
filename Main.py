@@ -14,7 +14,7 @@ model_type = "ExtendedSumm"
 n=12
 corpusWeight = 1.2
 corpusPath = "Corpus"
-document_name = "Document_4"
+document_name = "Document_5"
 
 document_path = os.path.join("Document", document_name + ".xml")
 
