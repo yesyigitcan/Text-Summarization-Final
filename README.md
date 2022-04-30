@@ -54,24 +54,24 @@
 
 <h2>Experimental Results</h2>
   
-|Document|Sentence Count|Model|Rogue-1|Rogue-2|Rogue-L
-|---|---|---|---|---|---|
-|Document #3|8|EdgeSumm|0.69565|0.64444|0.69565|
-|Document #3|8|ExtendedSumm|0.74434|0.71226|0.74434|
-|Document #4|7|EdgeSumm|0.61135|0.50557|0.61135|
-|Document #4|7|ExtendedSumm|0.61135|0.50557|0.61135|
-|Document #4|8|EdgeSumm|0.56800|0.46465| 0.56800|
-|Document #4|8|ExtendedSumm|0.63673|0.54167| 0.63673|
-|Document #4|9|EdgeSumm|0.65414|0.53529| 0.65414|
-|Document #4|9|ExtendedSumm|0.72031|0.640777|0.72031|
-|Document #4|10|EdgeSumm|0.66434|0.58651|0.66434|
-|Document #4|10|ExtendedSumm|0.64828|0.56977|0.64828|
-|Document #4|12|EdgeSumm|0.68085|0.54867|0.68085|
-|Document #4|12|ExtendedSumm|0.60436|0.51414|0.60436|
-|Document #5|10|EdgeSumm|0.55801|0.49321|0.55801|
-|Document #5|10|ExtendedSumm|0.57224|0.51905|0.57224|
-|Document #5|11|EdgeSumm|0.54497|0.42745|0.54497|
-|Document #5|11|ExtendedSumm|0.55228|0.48552|0.55228|
-|Document #5|12|EdgeSumm|0.56122|0.49057|0.56122|
-|Document #5|12|ExtendedSumm|0.57216|0.50107|0.57216|
+|Document|Type|Corpus|Sentence Count|Model|Rogue-1|Rogue-2|Rogue-L
+|---|---|---|---|---|---|---|---|
+|Document #3|Subjective|Medical|8|EdgeSumm|0.69565|0.64444|0.69565|
+|Document #3|Subjective|Medical|8|ExtendedSumm|0.74434|0.71226|0.74434|
+|Document #4|Subjective|Psychology|7|EdgeSumm|0.61135|0.50557|0.61135|
+|Document #4|Subjective|Psychology|7|ExtendedSumm|0.61135|0.50557|0.61135|
+|Document #4|Subjective|Psychology|8|EdgeSumm|0.56800|0.46465| 0.56800|
+|Document #4|Subjective|Psychology|8|ExtendedSumm|0.63673|0.54167| 0.63673|
+|Document #4|Subjective|Psychology|9|EdgeSumm|0.65414|0.53529| 0.65414|
+|Document #4|Subjective|Psychology|9|ExtendedSumm|0.72031|0.640777|0.72031|
+|Document #4|Subjective|Psychology|10|EdgeSumm|0.66434|0.58651|0.66434|
+|Document #4|Subjective|Psychology|10|ExtendedSumm|0.64828|0.56977|0.64828|
+|Document #4|Subjective|Psychology|12|EdgeSumm|0.68085|0.54867|0.68085|
+|Document #4|Subjective|Psychology|12|ExtendedSumm|0.60436|0.51414|0.60436|
+|Document #5|Objective|-|10|EdgeSumm|0.55801|0.49321|0.55801|
+|Document #5|Objective|-|10|ExtendedSumm|0.57224|0.51905|0.57224|
+|Document #5|Objective|-|11|EdgeSumm|0.54497|0.42745|0.54497|
+|Document #5|Objective|-|11|ExtendedSumm|0.55228|0.48552|0.55228|
+|Document #5|Objective|-|12|EdgeSumm|0.56122|0.49057|0.56122|
+|Document #5|Objective|-|12|ExtendedSumm|0.57216|0.50107|0.57216|
 
