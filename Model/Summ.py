@@ -13,7 +13,7 @@ class SummModel(ABC):
     def __init__(self, document:Document) -> None:
         self.nlp = stanza.Pipeline(processors='tokenize,mwt,lemma,pos', models_dir='.', lang="tr", treebank="UD_Turkish-Tourism", use_gpu=True, pos_batch_size=3000) # Build the pipeline, specify part-of-speech processor's batch size
         self.document= document
-
+        self.all_bigrams = list()
         self.sentence_bigram_dict = dict()
 
         self.title_nouns = list()
@@ -111,13 +111,13 @@ class SummModel(ABC):
         for word in word_weights.keys():
             G.add_node(word, weight=word_weights[word])
         
-        all_bigrams = list()
+        self.all_bigrams = list()
         for sentence in self.document.paragraphs:
             sentence_bigrams = self.create_bigrams(sentence)
             self.sentence_bigram_dict.update({sentence:sentence_bigrams})
-            all_bigrams += sentence_bigrams
+            self.all_bigrams += sentence_bigrams
 
-        G.add_edges_from(all_bigrams)
+        G.add_edges_from(self.all_bigrams)
         return G
     
     @abstractmethod
@@ -187,8 +187,11 @@ class SummModel(ABC):
         for sentence in S:
             # Bigram weight
             sentence_nodes = list(set(np.ravel(self.sentence_bigram_dict[sentence])))
-            sentence_nodes_weight = [noun_weight[node] for node in sentence_nodes]
-            bigram_weight = sum(sentence_nodes_weight) / max(sentence_nodes_weight)
+            if sentence_nodes:
+                sentence_nodes_weight = [noun_weight[node] for node in sentence_nodes]
+                bigram_weight = sum(sentence_nodes_weight) / max(sentence_nodes_weight)
+            else:
+                bigram_weight = 0.0
             sentence_rank_dict.update({sentence:bigram_weight})
         return sentence_rank_dict
 

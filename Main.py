@@ -1,6 +1,7 @@
 from platform import node
 import sys
 from Model.ExtendedSumm import ExtendedSummModel
+from Model.ExtendedSumm2 import ExtendedSummModel2
 from Model.EdgeSumm import EdgeSummModel
 from Model.Document import Document
 import numpy as np
@@ -10,11 +11,11 @@ import os
 import matplotlib.pyplot as plt
 
 
-model_type = "ExtendedSumm"
-n=12
+model_type = "ExtendedSumm2"
+n=5
 corpusWeight = 1.2
 corpusPath = "Corpus"
-document_name = "Document_5"
+document_name = "Document_2"
 
 document_path = os.path.join("Document", document_name + ".xml")
 
@@ -24,6 +25,9 @@ if model_type == "EdgeSumm":
 elif model_type == "ExtendedSumm":
     document = Document(document_path, corpusPath=corpusPath)
     model = ExtendedSummModel(document, corpusWeight=corpusWeight)
+elif model_type == "ExtendedSumm2":
+    document = Document(document_path, corpusPath=corpusPath)
+    model = ExtendedSummModel2(document, corpusWeight=corpusWeight)
 else:
     raise Exception("Invalid Model Type '{}'".format(model_type))
 
@@ -31,9 +35,15 @@ G = model.create_text_graph()
 #model.show_text_graph(G)
 C = model.get_candidate_edges(G)
 #print(C)
-S = model.get_candidate_summary(C)
-if model_type == "ExtendedSumm":
+if model_type == "ExtendedSumm2":
+    S, BiW, BiS = model.get_candidate_summary(G)
+else:
+    S = model.get_candidate_summary(C)
+
+if model_type  == "ExtendedSumm":
     S_final = model.sentence_selection(G, S, D=document, n=n)
+elif model_type == "ExtendedSumm2":
+    S_final = model.sentence_selection(G, S, D=document, BiW=BiW, BiS=BiS, n=n)
 else:
     S_final = model.sentence_selection(G, S, n=n)
 summary = "\n".join(S_final)
