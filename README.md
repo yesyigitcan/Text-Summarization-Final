@@ -2,6 +2,10 @@
 
 https://drive.google.com/file/d/1uws1Ji_L2TuCF4Uol-rTQUJZWZr3hn1Y/view?usp=sharing
 
+<h2>Thesis Presentation</h2>
+
+https://docs.google.com/presentation/d/1DAzWLc2SuMQFFmoC9usXSxvOqVRaOV9G61KQC663OYE/edit?usp=sharing
+
 <h2>Contributions</h2>
 
 <ul>
